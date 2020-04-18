@@ -61,5 +61,34 @@ public class PatientRepository {
 		 }
 		return patients;
 	}
+
+	public Patient getPatient(int uid) 
+	{
+		String sql = "select * from user where uid="+uid;
+		Patient p = new Patient();
+		try 
+		{
+			Statement st = con.createStatement();
+		    ResultSet rs = st.executeQuery(sql);
+		    if(rs.next())
+		    {
+		    	  p.setUid(rs.getInt(1));
+				  p.setFname(rs.getNString(2));
+			      p.setLname(rs.getNString(3));
+				  p.setTelNo(rs.getInt(4));
+				  p.setEmail(rs.getNString(5));
+				  p.setAge(rs.getInt(6));
+				  p.setGender(rs.getNString(7));
+				  p.setNicNo(rs.getNString(8));
+				  p.setPassword(rs.getNString(9));
+				  p.setUsername(rs.getNString(10));
+		    }
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		 return p;
+	}
 	
 }

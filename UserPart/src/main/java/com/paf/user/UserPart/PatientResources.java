@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -19,6 +20,14 @@ public class PatientResources {
 	{
 		System.out.println("Patient called..");	
 		return repo.getPatients();
+	}
+	
+	@GET
+	@Path("patient/{uid}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Patient getPatient(@PathParam("uid") int uid)
+	{
+		return repo.getPatient(uid);
 	}
 
 }
