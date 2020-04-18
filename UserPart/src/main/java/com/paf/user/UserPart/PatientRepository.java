@@ -142,7 +142,7 @@ public class PatientRepository {
 			  st.setInt(10, p1.getUid());
 	          st.executeUpdate();
 	          
-	         //output = "Updated successfully";
+	         output = "Updated successfully";
 			
 		    } 
 		 catch (Exception e) 
