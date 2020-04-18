@@ -44,6 +44,27 @@ public class PatientResources {
 		return p1;
 	}
 	
-	
+	@PUT
+	@Path("/patient")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Patient updatePatient(Patient p1) 
+	{
+		System.out.println(p1);	
+		repo.update(p1);
+		return p1;
+
+	}
+	@DELETE
+	@Path("patient/{uid}")
+	public Patient deletePatient(@PathParam("uid") int uid)
+	{
+		
+		Patient p = repo.getPatient(uid);
+		
+		if(p.getUid()!=0)
+ 	repo.delete(uid);
+		return p;
+		
+	}
 
 }
