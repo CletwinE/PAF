@@ -31,7 +31,7 @@ public class Payment {
 			// iterate through the rows in the result set
 			while (rs.next()) {
 
-				String pamentid = Integer.toString(rs.getInt("pamentID"));
+				String pamentid = Integer.toString(rs.getInt("paymentID"));
 				String cardno = Integer.toString(rs.getInt("cardNo"));
 				String nameoncard = rs.getString("nameOnCard");
 				String expdate = rs.getString("expDate");
@@ -65,7 +65,7 @@ public class Payment {
 				return "Error while connecting to the database for inserting.";
 			}
 			// create a prepared statement
-			String query = "insert into payment" + "(`pamentID`,`cardNo`,`nameOnCard`,`expDate`,`cvc`)"
+			String query = "insert into payment" + "(`paymentID`,`cardNo`,`nameOnCard`,`expDate`,`cvc`)"
 					+ " values (?, ?, ?, ?, ?)";
 
 			PreparedStatement preparedStmt = con.prepareStatement(query);
@@ -131,7 +131,7 @@ public class Payment {
 			}
 
 			// create a prepared statement
-			String query = "UPDATE payment SET cardNo = ?, nameOnCard = ?, expDate = ?, cvc = ? WHERE pamentID=?";
+			String query = "UPDATE payment SET cardNo = ?, nameOnCard = ?, expDate = ?, cvc = ? WHERE paymentID=?";
 
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
