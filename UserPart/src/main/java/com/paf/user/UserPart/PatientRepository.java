@@ -2,6 +2,7 @@ package com.paf.user.UserPart;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class PatientRepository {
 
      }
 
+   //retrive  patient details from database
 	public List<Patient> getPatients() {
 		
 		List<Patient> patients = new ArrayList<>();
@@ -61,7 +63,7 @@ public class PatientRepository {
 		 }
 		return patients;
 	}
-
+	  //Retrieve unique patient details from database
 	public Patient getPatient(int uid) 
 	{
 		String sql = "select * from user where uid="+uid;
@@ -90,5 +92,34 @@ public class PatientRepository {
 		}
 		 return p;
 	}
+
+	//inserting patient details to database
+	public void insertPatient(Patient p1) {
+		String sql = "insert into user values(?,?,?,?,?,?,?,?,?,?)";
+		 try 
+		   {
+			  PreparedStatement st = con.prepareStatement(sql);
+			  st.setInt(1, p1.getUid());
+			  st.setString(2, p1.getFname());
+			  st.setString(3, p1.getLname());
+			  st.setInt(4, p1.getTelNo());
+			  st.setString(5, p1.getEmail());
+			  st.setInt(6,p1.getAge());
+			  st.setString(7, p1.getGender());
+			  st.setString(8, p1.getNicNo());
+			  st.setString(9, p1.getPassword());
+			  st.setString(10, p1.getUsername());
+	          st.executeUpdate();
+		
+			
+		    } 
+		 catch (Exception e) 
+		  {
+			
+		   System.out.println(e);
+		  } 
+	}
+	
+	
 	
 }
