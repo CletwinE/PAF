@@ -10,4 +10,4 @@ Yogarajah.S- Hospital Management Service
 
 Cletwin.E - Payment Service
 
-Lathusha.S - Feedback with rating (Doctor, Hospital) Service
+Lathusha.S - Appointment service
