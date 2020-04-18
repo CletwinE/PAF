@@ -119,6 +119,59 @@ public class PatientRepository {
 		   System.out.println(e);
 		  } 
 	}
+
+	
+
+	public void update(Patient p1) {
+		// TODO Auto-generated method stub
+		String sql = "update user set fname=?,lname=?,telNo=?,email=?,age=?,gender=?,nicNo=?,password=?,username=? where uid=?";
+		String output = "";
+	   	 try 
+		   {
+			  PreparedStatement st = con.prepareStatement(sql);
+			
+			  st.setString(1, p1.getFname());
+			  st.setString(2, p1.getLname());
+	          st.setInt(3, p1.getTelNo());
+			  st.setString(4, p1.getEmail());
+			  st.setInt(5,p1.getAge());
+			  st.setString(6, p1.getGender());
+			  st.setString(7, p1.getNicNo());
+			  st.setString(8, p1.getPassword());
+			  st.setString(9, p1.getUsername());
+			  st.setInt(10, p1.getUid());
+	          st.executeUpdate();
+	          
+	          output = "Updated successfully";
+			
+		    } 
+		 catch (Exception e) 
+		  {
+			
+			 output = "Error while updating the item.";
+		     System.err.println(e.getMessage());
+		  } 
+	}
+
+	public void delete( int uid) {
+
+		String sql = "delete from user where uid=?";
+   	 try 
+	   {
+		  PreparedStatement st = con.prepareStatement(sql);
+		  st.setInt(1, uid);
+          st.executeUpdate();
+	
+		
+	    } 
+	 catch (Exception e) 
+	  {
+		
+	   System.out.println(e);
+	  } 
+		
+		
+	}
 	
 	
 	
