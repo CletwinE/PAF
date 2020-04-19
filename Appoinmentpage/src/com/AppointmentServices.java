@@ -29,7 +29,7 @@ public class AppointmentServices {
 	{
 	return patientObj.readPatients();
 	}
-	
+	//update appoiments
 	@POST
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
