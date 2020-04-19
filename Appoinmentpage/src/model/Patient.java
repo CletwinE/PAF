@@ -35,15 +35,16 @@ public class Patient {
 	if (con == null)
 	{return "Error while connecting to the database for inserting."; }
 	// create a prepared statement
-	String query = " insert into appointment(AppointmentID,`patientname`,`Specialist`,`Hospital`,`Doctor`)"             //`Adate`,` time`
+	String query = " insert into appointment('AppointmentID','patientname','Specialist','Hospital','Doctor')"            
 	+ " values (?, ?, ?, ?, ?)";
 	PreparedStatement preparedStmt = con.prepareStatement(query);
+	
+	
 	// binding values
 	preparedStmt.setInt(1, 0);
 	preparedStmt.setString(2, pname);
 	
-	//preparedStmt.setDate(3, Adate);
-	//preparedStmt.setTime(4, time);
+	
 	preparedStmt.setString(3, specialist);
 	preparedStmt.setString(4, hospital);
 	preparedStmt.setString(5, doctor);
@@ -60,6 +61,7 @@ public class Patient {
 	return output;
 	}
 	
+	
 	public String readPatients()
 	{
 	String output = "";
@@ -71,7 +73,7 @@ public class Patient {
 	// Prepare the html table to be displayed
 	output = "<table border=\"1\">"
 			+ "<tr>"
-			+ "<th>patientname</th>"
+			+ "<th>patient name</th>"
 			+ "<th>Specialist Name</th>"
 			+ "<th>Hospital Name</th>"
 			+ "<th>Doctor Name</th>"
@@ -90,7 +92,7 @@ public class Patient {
 	String AppointmentID = Integer.toString(rs.getInt("AppointmentID"));
 	String patientname = rs.getString("pname");
 	String Specialist = rs.getString("specialist");
-	String Hospital = Double.toString(rs.getDouble("hospital"));
+	String Hospital = rs.getString("hospital");
 	String Doctor = rs.getString("doctor");
 	// Add into the html table
 	
@@ -113,14 +115,14 @@ public class Patient {
 	}
 	catch (Exception e)
 	{
-	output = "Error while reading the Patients.";
+	output = "Error while reading the appointments.";
 	System.err.println(e.getMessage());
 	}
 	return output;
 	}
 	
 	
-	
+	//public List<Patient.java>
 	
 	
 	

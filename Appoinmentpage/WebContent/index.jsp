@@ -9,7 +9,7 @@
 <body>
 	<center>
 		<h1>Welcome to Appointment web service</h1>
-		<br> <br> <img src="Img/App.jpg" width="800" height="400"></img>
+		<br> <br> <img src="Img/Pay.jpg" width="800" height="400"></img>
 	</center>
 
 </body>
