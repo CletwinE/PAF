@@ -2,7 +2,7 @@
 
 Each Member Services
 ---------------------
-Dilan.V - User Management Service
+Dilan.V - User Management Service (Patient)
 
 Gunarathna.K.A.G.I.P. T - Doctor Management Service 
 
