@@ -100,7 +100,7 @@ public class Payment {
 			}
 
 			// create a prepared statement
-			String query = "delete from payment where pamentID=?";
+			String query = "delete from payment where paymentID=?";
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
 			// binding values

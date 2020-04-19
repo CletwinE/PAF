@@ -47,8 +47,8 @@ public class PaymentService {
 
 		JsonObject PaymentObject = new JsonParser().parse(paymentData).getAsJsonObject();
 
-		String pamentID = PaymentObject.get("pamentID").getAsString();
-		String output = payment.deletePayment(pamentID);
+		String paymentID = PaymentObject.get("paymentID").getAsString();
+		String output = payment.deletePayment(paymentID);
 		return output;
 	}
 
