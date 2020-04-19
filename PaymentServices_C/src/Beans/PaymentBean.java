@@ -9,7 +9,7 @@ import com.google.gson.JsonParser;
 public class PaymentBean {
 
 	// create variables
-	int pamentID;
+	int paymentID;
 	private int cardNo;
 	private String nameOnCard;
 	private String expDate;
@@ -23,8 +23,8 @@ public class PaymentBean {
 
 		JsonObject paymentObject = new JsonParser().parse(doc).getAsJsonObject();
 
-		if (paymentObject.get("pamentID") != null) {
-			this.pamentID = paymentObject.get("pamentID").getAsInt();
+		if (paymentObject.get("paymentID") != null) {
+			this.paymentID = paymentObject.get("paymentID").getAsInt();
 		}
 
 		this.cardNo = paymentObject.get("cardNo").getAsInt();
@@ -34,9 +34,9 @@ public class PaymentBean {
 
 	}
 
-	public PaymentBean(int pamentID, int cardNo, String nameOnCard, String expDate, int cvc) {
+	public PaymentBean(int paymentID, int cardNo, String nameOnCard, String expDate, int cvc) {
 		super();
-		this.pamentID = pamentID;
+		this.paymentID = paymentID;
 		this.cardNo = cardNo;
 		this.nameOnCard = nameOnCard;
 		this.expDate = expDate;
@@ -51,12 +51,12 @@ public class PaymentBean {
 		this.cvc = cvc;
 	}
 
-	public int getPamentID() {
-		return pamentID;
+	public int getPaymentID() {
+		return paymentID;
 	}
 
-	public void setPamentID(int pamentID) {
-		this.pamentID = pamentID;
+	public void setPaymentID(int paymentID) {
+		this.paymentID = paymentID;
 	}
 
 	public int getCardNo() {

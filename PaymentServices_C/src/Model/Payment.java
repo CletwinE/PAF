@@ -31,7 +31,7 @@ public class Payment {
 			// iterate through the rows in the result set
 			while (rs.next()) {
 
-				String pamentid = Integer.toString(rs.getInt("paymentID"));
+				String paymentid = Integer.toString(rs.getInt("paymentID"));
 				String cardno = Integer.toString(rs.getInt("cardNo"));
 				String nameoncard = rs.getString("nameOnCard");
 				String expdate = rs.getString("expDate");
@@ -88,7 +88,7 @@ public class Payment {
 		return output;
 	}
 
-	public String deletePayment(String pamentID) {
+	public String deletePayment(String paymentID) {
 		String output = "";
 		try {
 
@@ -104,7 +104,7 @@ public class Payment {
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
 			// binding values
-			preparedStmt.setInt(1, Integer.parseInt(pamentID));
+			preparedStmt.setInt(1, Integer.parseInt(paymentID));
 
 			// execute the statement
 			preparedStmt.execute();
@@ -140,7 +140,7 @@ public class Payment {
 			preparedStmt.setString(2, doc.getNameOnCard());
 			preparedStmt.setString(3, doc.getExpDate());
 			preparedStmt.setInt(4, doc.getCvc());
-			preparedStmt.setInt(5, doc.getPamentID());
+			preparedStmt.setInt(5, doc.getPaymentID());
 
 			// execute the statement
 			preparedStmt.execute();
