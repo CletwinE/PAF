@@ -1,0 +1,219 @@
+Name:Cletwin E
+Type:Json
+
+---------------------View Payment Data---------------------
+Method:GET
+URL: http://localhost:8080/PaymentServices/HealthcareService/Payment
+
+
+---------------------Add Payment Data---------------------
+Method:POST
+URL: http://localhost:8080/PaymentServices/HealthcareService/Payment
+
+{
+	"cardNo":"486598257",
+	"nameOnCard":"Eliyas N",
+	"expDate":"2023/01/10",
+	"cvc":"708"
+}
+
+---------------------Update Payment Data---------------------
+Method:PUT
+URL: http://localhost:8080/PaymentServices/HealthcareService/Payment
+
+{
+	"paymentID":"14",  
+	"cardNo":"586925458",  
+	"nameOnCard":"Cletwin Eliyas(Updated)",  
+	"expDate":"2023/01/10",  
+	"cvc":"708" 	
+}
+
+---------------------Delete Payment Data---------------------
+Method:DELETE
+URL: http://localhost:8080/PaymentServices/HealthcareService/Payment
+
+{
+	"paymentID":"16"
+}
+
+
+============================================================================================================
+============================================================================================================
+
+
+
+Name:Dilan V
+Type:Json
+
+---------------------View users ---------------------
+Method:GET
+url:-http://localhost:8085/UserPart/webapi/patients
+
+
+---------------------API for insert a new user into the DB---------------------
+http://localhost:8085/UserPart/webapi/patients/patient
+Method:POST
+
+{
+        "age": 55,
+        "email": "dilan@gmail.com",
+        "fname": "abi",
+        "gender": "male",
+        "lname": "dilan",
+        "nicNo": "454578v",
+        "password": "dilan123",
+        "telNo": 5122200,
+        "username": "dilan001"
+}
+
+---------------------API for update a existing user into the DB---------------------
+http://localhost:8085/UserPart/webapi/patients/patient
+Method:PUT
+
+{
+	"uid": "auto generated integer",
+        "age": 30,
+        "email": "cletwin@gmail.com",
+        "fname": "munzir",
+        "gender": "male",
+        "lname": "eliyas",
+        "nicNo": "9696960v",
+        "password": "dilan123",
+        "telNo": 512225397,
+        "username": "cletwin123"
+}
+
+---------------------API for delete a existing user from DB---------------------
+http://localhost:8085/UserPart/webapi/patients/patient/{uid}
+Method:DELETE
+
+{
+		uid="select from the services"
+}
+
+
+============================================================================================================
+============================================================================================================
+
+Name:Yogarajah.S
+Type:Json
+
+
+---------------------View Hospital Data---------------------
+Method:GET
+http://localhost:8080/Hospital/webapi/hospitals/hospital
+
+
+---------------------insert hospital data---------------------
+http://localhost:8080/Hospital/webapi/hospitals/hospital
+Method:POST
+
+{
+    "hid": 35,
+    "name": "royal",
+    "regID":"R01",
+    "address":"colombo",
+    "telNo":"0118765438"
+     
+}
+
+---------------------update hospital data----------------------
+
+http://localhost:8080/Hospital/webapi/hospitals/hospital
+Method:PUT
+
+{
+    "hid": 35,
+    "name": "navaloka",
+    "regID":"R01",
+    "address":"colombo",
+    "telNo":"0118765438"
+     
+}
+
+---------------------insert hospital data----------------------
+http://localhost:8080/Hospital/webapi/hospitals/hospital/{hid}
+Method:DELETE
+
+
+
+
+
+============================================================================================================
+============================================================================================================
+
+Name:Gunarathna K.A.G.I.P.T
+Type:Json
+
+
+----------------View  All Doctors------------
+Method: GET
+URL: http://localhost:8080/health/webapi/Doc
+
+----------------Search Doctor by ID-------------
+Method: GET
+URL: http://localhost:8080/health/webapi/Doc/appoin/102
+
+--------------Add Doctor---------------------
+Method: POST
+URL: http://localhost:8080/health/webapi/Doc/doctor
+
+{
+        "contact_no": 229751,
+        "email": "perera@gmai",
+        "id": 103,
+        "name": "perera",
+        "section": "Surgery"
+}
+
+-------------------Update Dotor Data-------
+Method: PUT
+URL: http://localhost:8080/health/webapi/Doc/update
+
+{
+        "contact_no": 229751,
+        "email": "kasun@gmai",
+        "id": 103,
+        "name": kasun
+        "section": "brain"
+}
+
+-----------------------Delete Doctor---------------
+Method: DELETE
+URL: http://localhost:8080/health/webapi/Doc/103
+
+{
+    "contact_no": 229751,
+    "email": "perera@gmai",
+    "id": 103,
+    "name": "perera",
+    "section": "Surgery"
+}
+
+-------------------View Appointments----------------
+Method: GET
+URL: http://localhost:8080/health/webapi/Doc/appoin/110
+
+
+============================================================================================================
+============================================================================================================
+Name:Lathusha.S
+Type:Json
+
+
+---------------------View Appointment Data---------------------
+Method:GET
+URL: http://localhost:8084/Appoinmentpage/MyService/project
+
+---------------------Add Appointment Data---------------------
+Method:POST
+URL: http://localhost:8084/Appoinmentpage/MyService/project
+{  
+	"patientname":"Kajany",  
+	"Specialist":"Kidney",  
+	"Hospital":"Royal",  
+	"Doctor":"Dr.Maran"
+}
+
+
