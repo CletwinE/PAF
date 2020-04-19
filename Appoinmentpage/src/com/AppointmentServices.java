@@ -29,7 +29,7 @@ public class AppointmentServices {
 	{
 	return patientObj.readPatients();
 	}
-	
+	//update appoiments
 	@POST
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -61,6 +61,21 @@ public class AppointmentServices {
 	String Hospital = itemObject.get("i,Hospital").getAsString();
 	String Doctor = itemObject.get("Doctor").getAsString();
 	String output = patientObj.updateappointment(AppointmentID, patientname,Specialist,Hospital,Doctor);
+	return output;
+	}
+	
+	
+	@DELETE
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String deleteAppointment(String itemData)
+	{
+	//Convert the input string to an XML document
+	Document doc = Jsoup.parse(itemData, "", Parser.xmlParser());
+	//Read the value from the element <itemID>
+	String AppointmentID= doc.select(" AppointmentID").text();
+	String output = patientObj.deleteAppointment( AppointmentID);
 	return output;
 	}
 	
